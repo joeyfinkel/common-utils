@@ -32,11 +32,11 @@ export function capitalizeWord(word: string | string[]) {
  * @returns A random number between `min` and `max`.
  * @remarks The number is inclusive of `min` and `max`.
  */
-export const generateRandomNumber = (min: number, max: number) => {
+export function generateRandomNumber(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-};
+}
 
-export const shallowCompareArrays = <T>(arr1: T[], arr2: T[]) => {
+export function shallowCompareArrays<T>(arr1: T[], arr2: T[]) {
   const sorted1 = arr1.sort();
   const sorted2 = arr2.sort();
 
@@ -44,7 +44,7 @@ export const shallowCompareArrays = <T>(arr1: T[], arr2: T[]) => {
     sorted1.length === sorted2.length &&
     sorted1.every((el, idx) => el === sorted2[idx])
   );
-};
+}
 
 /**
  * Gets the current date and returns it.
@@ -136,7 +136,7 @@ export function setOrdinalSuffix(i: number | string) {
  * @param chunkSize The number of chunks to create.
  * @returns An array spliced into chunks.
  */
-export const splitIntoChunks = <T>(list: T[], chunkSize: number) => {
+export function splitIntoChunks<T>(list: T[], chunkSize: number) {
   const arr = [...list];
   const res: T[][] = [];
 
@@ -150,18 +150,18 @@ export const splitIntoChunks = <T>(list: T[], chunkSize: number) => {
   }
 
   return res;
-};
+}
 
 /**
  * Adds a delay before the next piece of code is executed.
  * @param time The length of the delay in milliseconds.
  * @returns A void promise to add a delay between lines of code.
  */
-export const delay = (time: number) => {
+export function delay(time: number) {
   return new Promise<void>((resolve) => {
     setTimeout(resolve, time);
   });
-};
+}
 
 export function uniqueArrayOfObjects<T>(array: T[], key?: keyof T): T[] {
   if (key) {

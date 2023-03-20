@@ -5,7 +5,10 @@ export type UnionToIntersection<U> = (
   ? I
   : never;
 export type IsUnion<T> = [T] extends [UnionToIntersection<T>] ? false : true;
-export type Mapped<Type extends string | number | symbol, Return> = IsUnion<Type> extends true
+export type Mapped<
+  Type extends PropertyKey,
+  Return
+> = IsUnion<Type> extends true
   ? { [x in Type]: Return }
   : { [x in keyof Type]: Return };
 export type Tuple<TItem, TLength extends number> = (TItem extends unknown[]

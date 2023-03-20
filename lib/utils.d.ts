@@ -13,8 +13,8 @@ export declare function capitalizeWord(words: string[]): string[];
  * @returns A random number between `min` and `max`.
  * @remarks The number is inclusive of `min` and `max`.
  */
-export declare const generateRandomNumber: (min: number, max: number) => number;
-export declare const shallowCompareArrays: <T>(arr1: T[], arr2: T[]) => boolean;
+export declare function generateRandomNumber(min: number, max: number): number;
+export declare function shallowCompareArrays<T>(arr1: T[], arr2: T[]): boolean;
 /**
  * Gets the current date and returns it.
  * @returns The current date in the format `YYYY-MM-DD`.
@@ -53,12 +53,12 @@ export declare function setOrdinalSuffix(i: string): string;
  * @param chunkSize The number of chunks to create.
  * @returns An array spliced into chunks.
  */
-export declare const splitIntoChunks: <T>(list: T[], chunkSize: number) => T[][];
+export declare function splitIntoChunks<T>(list: T[], chunkSize: number): T[][];
 /**
  * Adds a delay before the next piece of code is executed.
  * @param time The length of the delay in milliseconds.
  * @returns A void promise to add a delay between lines of code.
  */
-export declare const delay: (time: number) => Promise<void>;
+export declare function delay(time: number): Promise<void>;
 export declare function uniqueArrayOfObjects<T>(array: T[], key?: keyof T): T[];
 export declare function mergeArrayOfObjects<T>(objects: T[]): T;

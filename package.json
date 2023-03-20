@@ -4,6 +4,10 @@
   "description": "A set of utility functions and packages I end up using for a lot of my projects",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node-dev --respawn src/index.ts",
+    "build": "npm run build-ts && npm run copy-dts",
+    "build-ts": "tsc",
+    "copy-dts": "xcopy /s /y src\\*.d.ts lib\\",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
